@@ -21,6 +21,11 @@ class Deck:
     def __repr__(self):
         return f"Deck of {len(self.cards)} cards"
 
+    def deal(self, num):
+        for i in range(num):
+            self.cards.pop()
+
+
 
 Deck()
 
