@@ -25,7 +25,7 @@ class Deck:
 
     def _deal(self, num):
         count = self.count()
-        deal_num = min([count, num])
+        deal_num = min(count, num)
         dealt_cards = []
         if count == 0:
             raise ValueError("All cards have been dealt")
@@ -34,10 +34,10 @@ class Deck:
         return dealt_cards, count
 
     def deal_card(self):
-        return self._deal(1)[0]
+        return self._deal(1)[0][0]
 
     def deal_hand(self, hand_size):
-        return self._deal(hand_size)
+        return self._deal(hand_size)[0]
 
     def shuffle(self):
         if self.count() < 52:
@@ -48,8 +48,15 @@ class Deck:
 
 
 d = Deck()
-print(d.shuffle())
+d.shuffle()
+card = d.deal_card()
+hand = d.deal_hand(50)
+card2 = d.deal_card()
+print(card)
+print(card2)
+print(hand)
 print(d.cards)
+# card3 = d.deal_card()
 
 
 
