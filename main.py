@@ -16,11 +16,15 @@ class Deck:
             for value in values:
                 self.cards.append(Card(suit, value))
         print(self.cards)
+        print(f"Deck of {len(self.cards)} cards")
+
+    def __repr__(self):
+        return f"Deck of {len(self.cards)} cards"
 
 
 Deck()
-c = Card("A", "Hearts")
-print(c)
+
+
 
 
 
