@@ -28,9 +28,13 @@ class Deck:
     def deal(self, num):
         count = self.count()
         deal_num = min([count, num])
+        dealt_cards = []
         print(f"going to remove {deal_num} cards")
         if count == 0:
             raise ValueError("All cards have been dealt")
+        for i in range(deal_num):
+            dealt_cards.append(self.cards.pop())
+        return dealt_cards
 
     def shuffle(self):
         if self.count() < 52:
