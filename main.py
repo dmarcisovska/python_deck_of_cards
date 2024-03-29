@@ -28,12 +28,9 @@ class Deck:
         count = self.count()
         deal_num = min([count, num])
         print(f"going to remove {deal_num} cards")
-        # try:
-        #     for i in range(num):
-        #         self.cards.pop()
-        # except ValueError:
-        #     return "All cards have been dealt"
-
+        if count == 0:
+            raise ValueError("All cards have been dealt")
+    
 
 
 
