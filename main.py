@@ -14,7 +14,8 @@ class Deck:
         self.cards = []
         for suit in suits:
             for value in values:
-                print(Card(suit, value))
+                self.cards.append(Card(suit, value))
+        print(self.cards)
 
 
 Deck()
