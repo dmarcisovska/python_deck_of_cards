@@ -15,19 +15,27 @@ class Deck:
         for suit in suits:
             for value in values:
                 self.cards.append(Card(suit, value))
-        print(self.cards)
-        print(f"Deck of {len(self.cards)} cards")
+        # print(self.cards)
+        # print(f"Deck of {len(self.cards)} cards")
+
+    def count(self):
+        return len(self.cards)
 
     def __repr__(self):
-        return f"Deck of {len(self.cards)} cards"
+        return f"Deck of {self.count()} cards"
 
     def deal(self, num):
-        for i in range(num):
-            self.cards.pop()
+        try:
+            for i in range(num):
+                self.cards.pop()
+        except ValueError:
+            return "All cards have been dealt"
 
 
 
-Deck()
+
+d = Deck()
+print(d.count())
 
 
 
