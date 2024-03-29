@@ -1,3 +1,4 @@
+import random
 class Card:
     def __init__(self, value, suit):
         self._value = value
@@ -30,7 +31,11 @@ class Deck:
         print(f"going to remove {deal_num} cards")
         if count == 0:
             raise ValueError("All cards have been dealt")
-    
+
+    def shuffle(self):
+        if self.count() < 52:
+            raise ValueError("Only full decks can be shuffled")
+        return random.shuffle(self.cards)
 
 
 
