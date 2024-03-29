@@ -25,17 +25,20 @@ class Deck:
         return f"Deck of {self.count()} cards"
 
     def deal(self, num):
-        try:
-            for i in range(num):
-                self.cards.pop()
-        except ValueError:
-            return "All cards have been dealt"
+        count = self.count()
+        deal_num = min([count, num])
+        print(f"going to remove {deal_num} cards")
+        # try:
+        #     for i in range(num):
+        #         self.cards.pop()
+        # except ValueError:
+        #     return "All cards have been dealt"
 
 
 
 
 d = Deck()
-print(d.count())
+print(d.deal(7))
 
 
 
