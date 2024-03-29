@@ -16,8 +16,6 @@ class Deck:
         for suit in suits:
             for value in values:
                 self.cards.append(Card(value, suit))
-        # print(self.cards)
-        # print(f"Deck of {len(self.cards)} cards")
 
     def count(self):
         return len(self.cards)
@@ -25,11 +23,10 @@ class Deck:
     def __repr__(self):
         return f"Deck of {self.count()} cards"
 
-    def deal(self, num):
+    def _deal(self, num):
         count = self.count()
         deal_num = min([count, num])
         dealt_cards = []
-        print(f"going to remove {deal_num} cards")
         if count == 0:
             raise ValueError("All cards have been dealt")
         for i in range(deal_num):
@@ -41,11 +38,17 @@ class Deck:
             raise ValueError("Only full decks can be shuffled")
         return random.shuffle(self.cards)
 
+    def deal_card(self):
+        return self._deal(1)
+
+    def deal_hand(self):
+        return self._deal(5)
 
 
 d = Deck()
-print(d.deal(3))
+print(d.deal_card())
 print(d.count())
+
 
 
 
