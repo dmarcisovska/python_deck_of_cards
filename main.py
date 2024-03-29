@@ -7,9 +7,20 @@ class Card:
         return f"{self._value} of {self._suit}"
 
 
-# class Deck:
+class Deck:
+    def __init__(self):
+        suits = ["Hearts", "Diamonds", "Spades", "Clubs"]
+        values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
+        self.cards = []
+        for suit in suits:
+            for value in values:
+                print(Card(suit, value))
 
+
+Deck()
 c = Card("A", "Hearts")
 print(c)
+
+
 
 
