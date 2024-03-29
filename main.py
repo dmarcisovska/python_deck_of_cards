@@ -15,7 +15,7 @@ class Deck:
         self.cards = []
         for suit in suits:
             for value in values:
-                self.cards.append(Card(suit, value))
+                self.cards.append(Card(value, suit))
         # print(self.cards)
         # print(f"Deck of {len(self.cards)} cards")
 
@@ -34,7 +34,7 @@ class Deck:
             raise ValueError("All cards have been dealt")
         for i in range(deal_num):
             dealt_cards.append(self.cards.pop())
-        return dealt_cards
+        return dealt_cards, count
 
     def shuffle(self):
         if self.count() < 52:
@@ -44,7 +44,8 @@ class Deck:
 
 
 d = Deck()
-print(d.deal(7))
+print(d.deal(3))
+print(d.count())
 
 
 
